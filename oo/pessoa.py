@@ -17,3 +17,8 @@ if __name__ == '__main__':
     
     for filho in joao.filhos:
         print (f'Os filhos de João são : {filho.nome}')
+    
+    jose.sobrenome = 'Silva'
+    del jose.filhos    
+    print (jose.__dict__)
+    print (joao.__dict__)

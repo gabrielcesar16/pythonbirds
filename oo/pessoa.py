@@ -20,9 +20,12 @@ class Pessoa:
 class Homem(Pessoa):
     pass 
 
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
-    jose = Homem(nome="José")
-    joao = Pessoa(jose, nome='João')
+    jose = Mutante(nome="José")
+    joao = Homem(jose, nome='João')
     print(id(jose))
     print(jose.nome)
     print(jose.idade)
@@ -32,10 +35,8 @@ if __name__ == '__main__':
     
     jose.sobrenome = 'Silva'
     del jose.filhos    
-    joao.olhos = 1
     print (jose.__dict__)
     print (joao.__dict__)
-    print(Pessoa.olhos)
     print(joao.olhos)
     print(jose.olhos)
     print(Pessoa.nome_e_atributos_de_classe())

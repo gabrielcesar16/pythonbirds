@@ -16,9 +16,12 @@ class Pessoa:
     @classmethod
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - Numero de olhos da espécie: {cls.olhos}'
+    
+class Homem(Pessoa):
+    pass 
 
 if __name__ == '__main__':
-    jose = Pessoa(nome="José")
+    jose = Homem(nome="José")
     joao = Pessoa(jose, nome='João')
     print(id(jose))
     print(jose.nome)
@@ -36,3 +39,5 @@ if __name__ == '__main__':
     print(joao.olhos)
     print(jose.olhos)
     print(Pessoa.nome_e_atributos_de_classe())
+    pessoa = Pessoa ("Anonimo")
+    print (isinstance(pessoa, Pessoa))

@@ -8,7 +8,7 @@ class Pessoa:
 
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod #decorator
     def metodo_estatico():
@@ -18,7 +18,9 @@ class Pessoa:
         return f'{cls} - Numero de olhos da espécie: {cls.olhos}'
     
 class Homem(Pessoa):
-    pass 
+    def cumprimentar(self):
+        cumprimentar_pessoa = super().cumprimentar()
+        return f'{cumprimentar_pessoa}. Aperto de mão'
 
 class Mutante(Pessoa):
     olhos = 3
@@ -42,3 +44,5 @@ if __name__ == '__main__':
     print(Pessoa.nome_e_atributos_de_classe())
     pessoa = Pessoa ("Anonimo")
     print (isinstance(pessoa, Pessoa))
+    print(jose.cumprimentar())
+    print(joao.cumprimentar())
